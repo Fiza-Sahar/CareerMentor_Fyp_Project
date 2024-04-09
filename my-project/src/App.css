@@ -5,9 +5,6 @@ body{
   font-family: "Inter", sans-serif;
 }
 
-header{
-  z-index: 10001 !important;
-}
 
 .gradientBg{
   background: linear-gradient(to bottom, #004A98, #1067c4);
@@ -18,20 +15,24 @@ header{
   duration-300;
 }
 
+
 .h1-large{
  font-size: 3rem;
+
+}
+.h1-about{
+  margin-top: 30px;
+  font-size: 3rem;
+  color: #004A98;
 }
 
 .h2-large{
+  
   font-size: 1.5rem;
  }
 
- .aboutus{
-  padding: 20px;
-  text-align: justify;
-  color: #004A98;
-  
- }
+ 
+ 
  .btnAbout{
   @apply py-3 px-8 bg-[#004A98]  font-semibold text-white rounded hover:bg-[#9098a0] transition-all 
   duration-300;
