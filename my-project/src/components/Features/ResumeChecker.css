@@ -1,0 +1,68 @@
+.resume-checker-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set height to fill the viewport */
+}
+
+.resume-checker {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 20px;
+  width: 80%; /* Set width to 80% of the viewport */
+  max-width: 600px; /* Limit maximum width */
+}
+
+.resume-checker h1 {
+  color: #004A98;
+  font-weight: 600;
+  font-size: 32px; /* Adjust font size */
+}
+
+.upload-container {
+  margin: 20px auto;
+  border: 2px dashed #004A98;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.upload-container p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.upload-container input[type='file'] {
+  display: none;
+}
+
+.upload-container button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #004A98;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-container button:disabled {
+  background-color: #004A98;
+  cursor: not-allowed;
+}
+
+.upload-container button:hover {
+  background-color: #28a745;
+}
+
+.upload-message {
+  margin-top: 20px;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.upload-message.error {
+  color: #dc3545;
+  font-weight: bold;
+}
