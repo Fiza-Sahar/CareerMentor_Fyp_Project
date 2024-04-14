@@ -1,8 +1,17 @@
+.caption{
+    color: #004A98;
+    font-size: 35px;
+    font-weight: 600;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
 .features-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-     margin-top: 50px;
+     margin-top: 60px;
     gap: 40px; /* Increased gap between features */
   }
   

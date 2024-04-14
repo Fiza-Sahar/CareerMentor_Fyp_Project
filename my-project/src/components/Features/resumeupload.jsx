@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ResumeUpload = ({ title, imageSrc, buttonName }) => {
   return (
+    
     <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
       <img className="w-full" src={imageSrc} alt={title} />
       <div className="px-6 py-4">
@@ -13,6 +14,7 @@ const ResumeUpload = ({ title, imageSrc, buttonName }) => {
         </Link>
       </div>
     </div>
+   
   );
 };
   

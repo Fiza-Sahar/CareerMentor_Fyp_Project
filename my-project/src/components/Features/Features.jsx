@@ -10,6 +10,10 @@ import ResumeChecker from './ResumeChecker';
 
 const Features = () => {
   return (
+    <>
+    <div className='caption'>
+      <h1>Your Career, Our Guidance</h1>
+      </div>
     <div className="features-container">
       <div className="feature">
         <ResumeUpload
@@ -34,6 +38,7 @@ const Features = () => {
       </div>
       
     </div>
+    </>
   );
 };
 
