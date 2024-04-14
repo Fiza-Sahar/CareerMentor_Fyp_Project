@@ -14,4 +14,4 @@ const ResumeBuilder = ({ title, imageSrc, buttonName }) => {
   );
 };
   
-export default ResumeBuilder
+export default ResumeBuilder;
