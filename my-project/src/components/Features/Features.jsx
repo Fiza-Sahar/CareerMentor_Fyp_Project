@@ -21,7 +21,7 @@ const Features = () => {
         <ResumeUpload
           title="Upload Resume"
           imageSrc={resume}
-          buttonName="Upload Resume"
+          buttonName="Resume Checker"
         />
       </div>
 
