@@ -4,7 +4,7 @@ import Home from "./components/Home/Home";
 import About from "./components/AboutUs/About";
 import Features from "./components/Features/Features";
 import Login from "./components/LoginPage/Login";
-import Signup from "./components/SignupPage/Signup"
+import Signup from "./components/SignupPage/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useRef, useState } from "react"; 
 
