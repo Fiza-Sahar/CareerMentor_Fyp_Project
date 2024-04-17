@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../../assets/Images/Banner.png'
 import About from "../../components/AboutUs/About";
+import Ourteam from "../../components/OurTeam/Ourteam";
 import "../../App.css";
 import "./Home.css"
 
@@ -24,6 +25,7 @@ const  Home = () =>{
 </div>
 </div>
 <About/>
+<Ourteam/>
     </div>
   );
 
