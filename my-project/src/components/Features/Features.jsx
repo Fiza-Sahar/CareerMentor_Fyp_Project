@@ -1,4 +1,7 @@
 import React from 'react';
+import './Features.css';
+import Searchbar from "../../components/Job_searchbar/Searchbar";
+
 import "./Features.css";
 import ResumeUpload from './uploadresume/resumeupload';
 import resume from '../../assets/Images/resume.png';
@@ -12,6 +15,15 @@ import JobFinding from './Jobfinding/jobfinding';
 
 const Features = () => {
   return (
+    <div>
+      <h1>This is features page</h1>
+      <h1>Hello World</h1>
+    <Searchbar/>
+
+    </div>
+   
+  )
+}
     <>
     <div className='caption'>
       <h1>Your Career, Our Guidance</h1>
@@ -49,7 +61,6 @@ const Features = () => {
       
     </div>
     </>
-  );
-};
+
 
 export default Features;
