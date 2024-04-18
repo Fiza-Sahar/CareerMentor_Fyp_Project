@@ -5,7 +5,7 @@ import About from "./components/AboutUs/About";
 import Features from "./components/Features/Features";
 import Login from "./components/LoginPage/Login";
 import Signup from "./components/SignupPage/Signup";
-import ResumeChecker from "./components/Features/ResumeChecker";
+import ResumeChecker from "./components/Features/ResumeChecker/ResumeChecker";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useRef } from "react";
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import "./Features.css";
-import ResumeUpload from './resumeupload';
+import ResumeUpload from './uploadresume/resumeupload';
 import resume from '../../assets/Images/resume.png';
 import interview from '../../assets/Images/interview preparation.png';
-import ResumeBuilder from './ResumeBuilder';
+import ResumeBuilder from './Resumebuilder/ResumeBuilder';
 import build from '../../assets/Images/builder.png';
 import job from '../../assets/Images/jobfinding.png';
-import InterviewPreparation from './interviewpreparation';
-import JobFinding from './jobfinding';
+import InterviewPreparation from './interviewpreparation/interviewpreparation';
+import JobFinding from './Jobfinding/jobfinding';
 
 
 const Features = () => {
