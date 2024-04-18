@@ -8,13 +8,9 @@ import Signup from "./components/SignupPage/Signup";
 
 import ResumeChecker from "./components/Features/ResumeChecker/ResumeChecker";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useRef, useState } from "react"; 
-import ResumeChecker from "./components/Features/ResumeChecker";
-//import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Router } from 'react-router-dom';
 
-import { useRef } from "react";
+import { useRef, useState } from "react"; 
+
 
 const App = () => {
   const aboutUsRef = useRef(null);
