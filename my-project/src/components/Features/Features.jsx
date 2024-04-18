@@ -10,6 +10,8 @@ import build from '../../assets/Images/builder.png';
 import job from '../../assets/Images/jobfinding.png';
 import InterviewPreparation from './interviewpreparation/interviewpreparation';
 import JobFinding from './Jobfinding/jobfinding';
+import Form from './interviewpreparation/Form';
+
 
 
 const Features = () => {

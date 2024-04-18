@@ -7,6 +7,8 @@ import Login from "./components/LoginPage/Login";
 import Signup from "./components/SignupPage/Signup";
 
 import ResumeChecker from "./components/Features/ResumeChecker/ResumeChecker";
+import Form from './components/Features/interviewpreparation/Form';
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { useRef, useState } from "react"; 
@@ -29,6 +31,7 @@ const App = () => {
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/resume-checker" element={<ResumeChecker />} /> {/* Add this route for ResumeChecker */}
+        <Route path="/Form"element={<Form />} />
       </Routes>
     </Router>
   );
