@@ -2,12 +2,16 @@ import React from 'react';
 import Banner from '../../assets/Images/Banner.png'
 import About from "../../components/AboutUs/About";
 import Ourteam from "../../components/OurTeam/Ourteam";
+import Features from "../../components/Features/Features"
 import "../../App.css";
 import "./Home.css"
+import Footer from '../Footer/Footer';
 
 const  Home = () =>{
   return (
-    <div className="md:px-12 p-4 max-w-screen-2x1 mx-auto mt-24">
+    <>
+    <div className='home-sec'>
+    <div className=" max-w-screen-2x1 mx-auto p-5 mt-20">
       <div className="gradientBg rounded-x1 rounded-br-[60px] rounded-t-[20px] md:p-9 px-4 py-9">
         <div className="flex flex-col md:flex-row-reverse justify-between items-center gap-10">
         <div>
@@ -24,9 +28,16 @@ const  Home = () =>{
 </div>
 </div>
 </div>
-<About/>
-<Ourteam/>
+</div>
+
+
+
     </div>
+    <About/>
+<Features/>
+<Ourteam/>
+<Footer/>
+    </>
   );
 
 };

@@ -16,6 +16,7 @@ function Form() {
   };
 
   return (
+    <div className='interview'>
     <form onSubmit={handleSubmit}>
       <label>
       <br></br><br></br>
@@ -35,8 +36,11 @@ function Form() {
           <option value="Product Manager">Product Manager</option>
         </select>
       </label>
+      <div className='interview'>
       <button type="Submit">Start</button>
+      </div>
     </form>
+    </div>
   );
 }
 

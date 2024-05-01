@@ -5,6 +5,7 @@ import About from "./components/AboutUs/About";
 import Features from "./components/Features/Features";
 import Login from "./components/LoginPage/Login";
 import Signup from "./components/SignupPage/Signup";
+import Footer from "./components/Footer/Footer"
 
 import ResumeChecker from "./components/Features/ResumeChecker/ResumeChecker";
 import Form from './components/Features/interviewpreparation/Form';
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/resume-checker" element={<ResumeChecker />} /> {/* Add this route for ResumeChecker */}
         <Route path="/Form"element={<Form />} />
       </Routes>
+  
     </Router>
   );
 };
