@@ -19,7 +19,7 @@ const Features = () => {
   return (
 
     <>
-    <div className='caption'>
+    <div className='caption' id='features'>
       <h1>Your Career, Our Guidance</h1>
       </div>
     <div className="features-container">

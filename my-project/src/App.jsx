@@ -34,6 +34,7 @@ const App = () => {
         <Route path="/Form"element={<Form />} />
         <Route path= "/Searchbar" element={<Searchbar/>}/>
       </Routes>
+  
     </Router>
   );
 };
