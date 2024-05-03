@@ -11,6 +11,7 @@ import job from '../../assets/Images/jobfinding.png';
 import InterviewPreparation from './interviewpreparation/interviewpreparation';
 import JobFinding from './Jobfinding/jobfinding';
 import Form from './interviewpreparation/Form';
+import Searchbar from './Jobfinding/Job_searchbar/Searchbar';
 
 
 
