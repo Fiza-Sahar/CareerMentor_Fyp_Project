@@ -3,14 +3,14 @@ import './Features.css';
 
 import "./Features.css";
 import ResumeUpload from './uploadresume/resumeupload';
-import resume from '../../assets/Images/resume.png';
-import interview from '../../assets/Images/interview preparation.png';
+import resume from '../../assets/Images/checker.png';
 import ResumeBuilder from './Resumebuilder/ResumeBuilder';
-import build from '../../assets/Images/builder.png';
-import job from '../../assets/Images/jobfinding.png';
+import build from '../../assets/Images/resumeBuilder.jpg';
 import InterviewPreparation from './interviewpreparation/interviewpreparation';
+import interview from '../../assets/Images/interviewprep.png';
 import JobFinding from './Jobfinding/jobfinding';
-import Form from './interviewpreparation/Form';
+import job from '../../assets/Images/jobfind.jpg';
+
 
 
 
@@ -24,9 +24,9 @@ const Features = () => {
     <div className="features-container">
       <div className="feature">
         <ResumeUpload
-          title="Upload Resume"
+          title="Resume Checker"
           imageSrc={resume}
-          buttonName="Resume Checker"
+          buttonName="Upload Resume "
         />
       </div>
 
