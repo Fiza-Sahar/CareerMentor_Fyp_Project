@@ -5,13 +5,13 @@ import About from "./components/AboutUs/About";
 import Features from "./components/Features/Features";
 import Login from "./components/LoginPage/Login";
 import Signup from "./components/SignupPage/Signup";
-
 import ResumeChecker from "./components/Features/ResumeChecker/ResumeChecker";
 import Form from './components/Features/interviewpreparation/Form';
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { useRef, useState } from "react"; 
+import Searchbar from './components/Features/Jobfinding/Job_searchbar/Searchbar';
 
 
 const App = () => {
@@ -32,7 +32,9 @@ const App = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/resume-checker" element={<ResumeChecker />} /> {/* Add this route for ResumeChecker */}
         <Route path="/Form"element={<Form />} />
+        <Route path= "/Searchbar" element={<Searchbar/>}/>
       </Routes>
+  
     </Router>
   );
 };

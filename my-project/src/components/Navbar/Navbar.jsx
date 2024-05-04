@@ -1,46 +1,80 @@
-import React from "react";
-import { useState } from "react";
-
-import logo from '../../assets/Images/logo.jpg'
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
-import { Link } from "react-router-dom";
+import logo from '../../assets/Images/logo.jpeg';
 import "./Navbar.css";
 
-const Navbar = ({ handleAboutClick , handleourTeamClick}) => {
-  const [Mobile, setMobile] = useState(false);
+const Navbar = ({ handleAboutClick, handleFeatureClick, handleourTeamClick }) => {
+  const [mobile, setMobile] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const featuresSection = document.getElementById("features");
+      const teamSection = document.getElementById("Ourteam");
+      
+      if (featuresSection && isElementInViewport(featuresSection)) {
+        handleFeatureClick();
+      }
+      
+      if (teamSection && isElementInViewport(teamSection)) {
+        handleourTeamClick();
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleFeatureClick, handleourTeamClick]);
+
+  const isElementInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
+
+  // Check if the current location is Login or Signup
+  const isLoginPage = location.pathname === "/Login";
+  const isSignupPage = location.pathname === "/Signup";
+
+  // If it's the Login or Signup page, don't render the Navbar
+  if (isLoginPage || isSignupPage) {
+    return null;
+  }
 
   return (
     <div className="container">
-    <nav className="navbar">
-      <img src={logo} alt="Logo" className="logo" />
-      <ul className={Mobile ? "nav-links-mobile" : "nav-links"} onClick={() => setMobile(false)}>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="#about" onClick={handleAboutClick}>
-            About
-          </a>
-        </li>
-        <li>
-        <Link to="/Features" >Features</Link>
-        </li>
-        
-        <li>
-            <a href="#Ourteam" onClick={handleourTeamClick}>Ourteam</a>
+      <nav className="navbar">
+        <img src={logo} alt="Logo" className="logo" />
+        <ul className={mobile ? "nav-links-mobile" : "nav-links"} onClick={() => setMobile(false)}>
+          <li>
+            <a href="/">Home</a>
           </li>
-        <Link to="/Login" className="nav-buttons">Log in</Link>
+          <li>
+            <a href="#about" >
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#features">Features</a>
+          </li>
+          <li>
+            <a href="#Ourteam">Team</a>
+          </li>
+          <Link to="/Login" className="nav-buttons">Log in</Link>
           <Link to="/Signup" className="nav-buttons">Sign Up</Link>
-     
-
-        {/* Other navigation links */}
-      </ul>
-      <button className="mobile-menu-icon" onClick={() => setMobile(!Mobile)}>
-        {Mobile ? <ImCross /> : <FaBars />}
-      </button>
-    </nav>
-    </div>
+        </ul>
+        <button className="mobile-menu-icon" onClick={() => setMobile(!mobile)}>
+          {mobile ? <ImCross /> : <FaBars />}
+        </button>
+      </nav>
+          </div>
   );
 };
 
