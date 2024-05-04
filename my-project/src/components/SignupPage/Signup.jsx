@@ -91,7 +91,9 @@ const SignupForm = () => {
         </div>
         <p>
       Already have an account?{' '}
-      <Link to="/Login">Login</Link>
+      <Link to="/Login" style={{ color: 'black', fontWeight: 'bold' }}>Login</Link>
+
+
     </p>
       </form>
     </div>
