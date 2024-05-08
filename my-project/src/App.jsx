@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { useRef, useState } from "react"; 
 import Searchbar from './components/Features/Jobfinding/Job_searchbar/Searchbar';
+import { Joblisting } from './components/Features/Jobfinding/Job_searchbar/Joblisting';
 
 
 const App = () => {
@@ -32,7 +33,8 @@ const App = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/resume-checker" element={<ResumeChecker />} /> {/* Add this route for ResumeChecker */}
         <Route path="/Form"element={<Form />} />
-        <Route path= "/Searchbar" element={<Searchbar/>}/>
+        <Route path= "/Searchbar" element={<Searchbar />}/>
+        <Route path='/Joblisting' element={<Joblisting/>}/>
       </Routes>
   
     </Router>
