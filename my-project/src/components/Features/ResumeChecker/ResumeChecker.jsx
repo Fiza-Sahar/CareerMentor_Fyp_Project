@@ -1,47 +1,24 @@
 import React, { useState } from 'react';
 import './ResumeChecker.css';
 
-function ResumeChecker() {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [isUploading, setIsUploading] = useState(false);
+const ResumeChecker = ({ onUpload }) => {
   const [uploadMessage, setUploadMessage] = useState('');
 
-  const handleFileChange = (event) => {
+  const handleFileChange = async (event) => {
     const file = event.target.files[0];
-    if (file && ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'].includes(file.type)) {
-      setSelectedFile(file);
-      setUploadMessage('');
-    } else {
-      alert('Please upload a PDF or DOCX file only.');
-    }
-  };
-
-  const handleUpload = async () => {
-    if (!selectedFile) return;
-
-    setIsUploading(true);
-    setUploadMessage('');
+    if (!file) return;
 
     try {
-      const formData = new FormData();
-      formData.append('resume', selectedFile);
-
-      // Replace with your actual server endpoint and handle response
-      const response = await fetch('/upload-resume', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        setUploadMessage('Upload successful!');
-      } else {
-        setUploadMessage('Upload failed. Please try again.');
-      }
+      const reader = new FileReader();
+      reader.onload = async (event) => {
+        const content = event.target.result;
+        onUpload(content); // Pass the content to the parent component's handler
+      };
+      reader.readAsText(file);
+      setUploadMessage('Upload successful!');
     } catch (error) {
       console.error('Upload error:', error);
       setUploadMessage('Upload failed. Please try again.');
-    } finally {
-      setIsUploading(false);
     }
   };
 
@@ -56,15 +33,37 @@ function ResumeChecker() {
         <p>In a challenging job market, our AI tool crafts standout resumes to boost your interview opportunities.</p>
         <div className="upload-container">
           <input type="file" id="resumeInput" onChange={handleFileChange} accept=".pdf,.docx" style={{ display: 'none' }} />
-          <p>Drop your resumes/CVs here or choose a file in PDF or DOCX format with a maximum size of 2MB.</p>
-          <button onClick={handleButtonClick} disabled={isUploading}>
-            {isUploading ? 'Uploading...' : 'Upload Your Resume'}
+          <p>Drop your resume here or choose a file in PDF or DOCX format with a maximum size of 2MB.</p>
+          <button onClick={handleButtonClick}>
+            Upload Your Resume
           </button>
           {uploadMessage && <p className="upload-message">{uploadMessage}</p>}
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default ResumeChecker;
+const ResumeAnalyzer = () => {
+  const [analysisResult, setAnalysisResult] = useState(null);
+
+  const analyzeResume = async (content) => {
+    // Example ATS verification logic: Check if content exists
+    const correctness = content ? 100 : 0;
+    setAnalysisResult(correctness);
+  };
+
+  return (
+    <div>
+      <h1>Resume Analyzer</h1>
+      <ResumeChecker onUpload={analyzeResume} />
+      {analysisResult !== null && (
+        <div>
+          <h2>Analysis Result: {analysisResult}%</h2>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ResumeAnalyzer;

@@ -1,16 +1,28 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
-import "./Login.css";
-
-
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import axios from 'axios'; // Import axios
+import './Login.css';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [showPassword, setShowPassword] = useState(false); 
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post('http://localhost:3001/login', { email, password })
+      .then(result => {
+        console.log(result);
+        if (result.data === "Success") {
+          navigate('/');
+        }
+      })
+      .catch(err => console.log(err)); // Remove the semicolon from here
+  };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -20,39 +32,13 @@ function Login() {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Login failed');
-      }
-
-      console.log('Login successful');
-      setEmail('');
-      setPassword('');
-      setErrorMessage('');
-    } catch (error) {
-      setErrorMessage('Invalid email or password');
-    }
-  };
-
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
 
   return (
-    
     <div className='login-page'>
-      
-
-        <div className="additional-text">
+      <div className="additional-text">
         <h1>Welcome Back!</h1>
         <p>Enter your credentials to log in.</p>
       </div>
@@ -75,7 +61,7 @@ function Login() {
           </div>
           <div className="form-group">
             <label htmlFor="password">Password:</label>
-            <div className="password-input-container"> 
+            <div className="password-input-container">
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
@@ -91,7 +77,7 @@ function Login() {
             </div>
           </div>
           <div className="form-group">
-            <a href="#">Forget Password?</a>
+            <Link to="#">Forget Password?</Link> {/* Use Link for navigation */}
           </div>
           <div className="center-button">
             <button type="submit">Login</button>
@@ -101,8 +87,6 @@ function Login() {
           <Link to="/Signup">Signup</Link>
         </p>
       </div>
-      {/* Additional text at the top of the page */}
-    
     </div>
   );
 }
