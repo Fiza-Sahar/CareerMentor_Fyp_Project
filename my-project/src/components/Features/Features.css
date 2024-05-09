@@ -1,19 +1,7 @@
-<<<<<<< Updated upstream
 .caption {
   color: #004A98;
   font-size: 30px;
   font-weight: 600;
-=======
-/* Feature.css */
-
-
-
-.caption {
-  color: #004a98;
-  font-size: 35px;
-  font-weight: 600;
-  align-items: center;
->>>>>>> Stashed changes
   text-align: center;
   margin-top: 30px;
 }
@@ -27,28 +15,18 @@
 }
 
 .feature {
-<<<<<<< Updated upstream
   width: 300px; /* Fixed feature width */
   height: 400px; /* Fixed feature height */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-=======
-  width: 300px; /* Increased feature width */
-  height: 350px; /* Increased feature height */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between; /* Align items with space between */
->>>>>>> Stashed changes
   text-align: center;
   border: 2px solid #e0e0e0; /* Added border for better separation */
   border-radius: 10px; /* Rounded corners */
   padding: 20px; /* Increased padding */
 }
 
-<<<<<<< Updated upstream
 .feature-image {
   max-width: 250px;
   align-self: center;
@@ -58,28 +36,6 @@
   color: #fff;
   border: none;
   padding: 12px 24px; /* Increased padding */
-=======
-.feature img {
-  width: 100%;
-  max-width: 210px; /* Adjust image max-width as needed */
-  height: auto;
-  margin-bottom: 20px; /* Increased margin */
-}
-
-/* Adjust button width to fit the text */
-.feature .button-container {
-  width: 100%; /* Ensure button spans full width */
-}
-
-.feature button {
-  width: 100%; /* Make button width 100% */
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 12px 0;
-  font-size: 15px;
-   /* Adjust vertical padding */
->>>>>>> Stashed changes
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition */
@@ -88,8 +44,3 @@
 .feature button:hover {
   background-color: #0056b3;
 }
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes

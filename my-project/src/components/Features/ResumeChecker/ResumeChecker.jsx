@@ -55,7 +55,7 @@ const ResumeAnalyzer = () => {
 
   return (
     <div>
-      <h1>Resume Analyzer</h1>
+      
       <ResumeChecker onUpload={analyzeResume} />
       {analysisResult !== null && (
         <div>

@@ -3,17 +3,9 @@ import './Features.css';
 
 import "./Features.css";
 import ResumeUpload from './uploadresume/resumeupload';
-<<<<<<< Updated upstream
 import resume from '../../assets/Images/checker.png';
 import ResumeBuilder from './Resumebuilder/ResumeBuilder';
 import build from '../../assets/Images/resumeBuilder.jpg';
-=======
-import resume from '../../assets/Images/resume.png';
-import interview from '../../assets/Images/interview.jpg';
-import ResumeBuilder from './Resumebuilder/ResumeBuilder';
-import build from '../../assets/Images/resumebuildee.jpg';
-import job from '../../assets/Images/jobfinding.png';
->>>>>>> Stashed changes
 import InterviewPreparation from './interviewpreparation/interviewpreparation';
 import interview from '../../assets/Images/interviewprep.png';
 import JobFinding from './Jobfinding/jobfinding';
