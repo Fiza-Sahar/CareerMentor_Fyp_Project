@@ -35,68 +35,77 @@ const SignupForm = () => {
     setErrors(validationErrors);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-   
-    console.log('Form submitted with data:', formData);
+    try {
+      const response = await fetch('/api/register', { // Updated endpoint here
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Signup failed');
+      }
+
+      console.log('Signup successful');
+      // Reset form fields after successful signup if needed
+    } catch (error) {
+      console.error('Error during signup:', error);
+      // Handle error if needed
+    }
   };
 
   return (
     <div className='Sigup-page'>
-      
-
-        <div className="additional-text">
+      <div className="additional-text">
         <h1>Hello!</h1>
         <p>Enter your credentials to Sign Up</p>
       </div>
       <div className="background-image"></div>
-    <div className="signup-form">
-      <h1>Sign Up!</h1>
-      <form onSubmit={handleSubmit}> 
-        <label htmlFor="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Enter your name" required />
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required />
-        <label htmlFor="password">Password:</label>
-        <div> 
-        <div className="password-input-container"> 
-  <input
-    type={showPassword ? "text" : "password"}
-    id="password"
-    name="password"
-    placeholder="Enter your password"
-    required
-    onChange={handleChange}
-  />
-  <button type="button" className="password-toggle-button" onClick={toggleShowPassword}>
-    <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-  </button>
-</div>
-
-
-        </div>
-        {errors.password && <p className="error-message">{errors.password}</p>} 
-        <a href="#">Forget Password?</a>
-        <div className="horizontal-or">
-          OR
-        </div>
-        <div className="social-login">
-          <GoogleOAuthProvider clientId={'369160555863-64rqvufirogr91olcrsh1527h3147utk.apps.googleusercontent.com'}>
-            <GoogleSignInButton />
-          </GoogleOAuthProvider>
-        </div>
-        <div className="center-button">
-          <button type="submit">Sign up</button>
-        </div>
-        <p>
-      Already have an account?{' '}
-      <Link to="/Login" style={{ color: 'black', fontWeight: 'bold' }}>Login</Link>
-
-
-    </p>
-      </form>
-    </div>
+      <div className="signup-form">
+        <h1>Sign Up!</h1>
+        <form onSubmit={handleSubmit}action='POST'> 
+          <label htmlFor="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Enter your name" required />
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+          <label htmlFor="password">Password:</label>
+          <div> 
+            <div className="password-input-container"> 
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+                onChange={handleChange}
+              />
+              <button type="button" className="password-toggle-button" onClick={toggleShowPassword}>
+                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+              </button>
+            </div>
+          </div>
+          {errors.password && <p className="error-message">{errors.password}</p>} 
+          <a href="#">Forget Password?</a>
+          <div className="horizontal-or">
+            OR
+          </div>
+          <div className="social-login">
+            <GoogleOAuthProvider clientId={'369160555863-64rqvufirogr91olcrsh1527h3147utk.apps.googleusercontent.com'}>
+              <GoogleSignInButton />
+            </GoogleOAuthProvider>
+          </div>
+          <div className="center-button">
+            <button type="submit">Sign up</button>
+          </div>
+          <p>
+            Already have an account?{' '}
+            <Link to="/Login" style={{ color: 'black', fontWeight: 'bold' }}>Login</Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };

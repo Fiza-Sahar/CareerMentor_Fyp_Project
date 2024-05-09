@@ -46,17 +46,14 @@ li:hover::before {
 .font {
     color: #004A98;
     font-size: 25px;
-    margin: top 2px;
-    ;
+    margin: top 2px;;
 }
 
-.rou {
+.rou{
     border-radius: 40px !important;
     border: 3px solid #004A98;
-    /* color: #004A98; */
-    /* font-weight: bold; */
-    text-indent: 20px;
-
+    color: #004A98;
+    font-weight: bold;
 }
 
 .background {
@@ -68,8 +65,9 @@ li:hover::before {
     padding: 11px;
     width: 200px;
     position: relative;
+    justify-content: center;
     font-weight: bold;
-    text-align: center;
+
 }
 
 .background:hover {
@@ -79,15 +77,14 @@ li:hover::before {
 .aaaaaaaa {
     border: 1px solid darkblue;
     border-radius: 200px;
-    border-width: 100px;
+    border-width: 100px; 
     padding: 7px;
     width: 150px;
     justify-content: center;
     font-weight: bold;
 }
-
-.cstyle {
-    color: #72b6ff;
-    /* line-height: 3%; */
+.cstyle{
+color: #72b6ff;
+/* line-height: 3%; */
 
 }
