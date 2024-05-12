@@ -23,7 +23,7 @@ function Signup(){
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    if (name === 'email' && !value.trim().match(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z\-]+\.)+[a-zA-Z]{2,}$/)) {
+    if (name === 'email' && !value.trim().match(/^([a-zA-Z0-9_\-\]+)@([a-zA-Z\-]+\.)+[a-zA-Z]{2,}$/)) {
       setErrors({ ...errors, email: 'Invalid email format' });
     } else if (name === 'password' && value.length < 8) {
       setErrors({ ...errors, password: 'Password must be at least 8 characters long' });
